@@ -12,7 +12,10 @@
     moment().day(0).format(dateFormat),
   ]
 
-  console.log(thisWeek, previousWeek);
-
+  
+  window.commons = {
+    thisWeek,
+    previousWeek,
+  }
 
 })()
