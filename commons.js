@@ -12,10 +12,17 @@
     moment().day(0).format(dateFormat),
   ]
 
-  
+  const addButton = (label, onClick) => {
+    let btn = document.createElement("button");
+    btn.innerHTML = label;
+	  btn.addEventListener("click", onClick);
+    document.body.prepend(btn);
+  }
+ 
   window.commons = {
     thisWeek,
     previousWeek,
+    addButton
   }
 
 })()
