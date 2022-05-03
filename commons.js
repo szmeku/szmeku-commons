@@ -25,12 +25,16 @@
         queryParams.set(paramName, paramValue);
 
         history.pushState(null, null, "?" + queryParams.toString());
+    }
+    
+    const reloadPage = () => {
         window.location.replace(window.location.href);
     }
 
     window.commons = {
         thisWeek,
         previousWeek,
+        reloadPage,
         addButton,
         replaceUrlSearchParam
     }
