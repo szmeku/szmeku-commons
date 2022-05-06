@@ -15,6 +15,8 @@
     const addButton = (label, onClick) => {
         let btn = document.createElement("button");
         btn.innerHTML = label;
+        btn.style.position = 'absolute';
+        btn.style.zIndex = 300;
         btn.addEventListener("click", onClick);
         document.body.prepend(btn);
     }
