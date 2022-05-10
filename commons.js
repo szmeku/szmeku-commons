@@ -28,6 +28,25 @@
 
         history.pushState(null, null, "?" + queryParams.toString());
     }
+
+    
+    const onElementAppears = (handler, selector) => {
+
+        let lastElemState = null;
+
+        setInterval( () => {
+
+            if(!lastElemState && document.querySelector(selector)) {
+                lastElemState = document.querySelector(selector)
+                handler(lastElemState);
+            }
+
+            if(lastElemState && !document.querySelector(selector)){
+                lastElemState = null;
+            }
+
+        }, 100)
+    }
     
     const reloadPage = () => {
         window.location.replace(window.location.href);
@@ -38,7 +57,8 @@
         previousWeek,
         reloadPage,
         addButton,
-        replaceUrlSearchParam
+        replaceUrlSearchParam,
+        onElementAppears
     }
 
 })()
